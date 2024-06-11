@@ -13,10 +13,13 @@ const loader = document.querySelector('.loader');
 
 formElms.addEventListener('submit', (e) => {
     e.preventDefault();
-     // Показати індикатор завантаження
-    //  loader.style.display = 'block';
-    const inputValue = formElms.elements['input'].value.trim();
-    if (!inputValue) return;
+
+  loader.style.display = 'block';
+  
+  const inputValue = formElms.elements['input'].value.trim();
+  
+  if (!inputValue) return;
+  
     processHttpRequest(inputValue) 
   .then((data) => {
             if (data && data.hits.length === 0) {
@@ -26,7 +29,9 @@ formElms.addEventListener('submit', (e) => {
                     backgroundColor: '#EF4040',
                     iconColor: '#FAFAFB',
                     position: 'topRight',
-                    timeout: 5000
+                    timeout: 3000,
+                    theme: 'dark',
+                    maxWidth: 450
                 });
             } else {
                    imgTemplate(data.hits)
@@ -36,9 +41,7 @@ formElms.addEventListener('submit', (e) => {
                     });
                   lightbox.refresh();
       }
-       // Приховати індикатор завантаження після завершення запиту
-    //   loader.style.display = 'none';
-       // Скинути форму
+      loader.style.display = 'none';
       formElms.reset();
         })
 });

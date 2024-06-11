@@ -7,7 +7,7 @@ export function imgTemplate(imgs) {
 
   imgs.forEach((img) => {
     const cardMarkup = `
-      <li>
+      <li class="gallery-item">
         <a class="gallery-link" href="${img.largeImageURL}" target="_blank">
           <img class="gallery-image" 
                src="${img.webformatURL}" 
@@ -15,10 +15,10 @@ export function imgTemplate(imgs) {
           />
         </a>
         <div class="image-details">
-          <p><b>Likes</b>: ${img.likes}</p>
-          <p><b>Views</b>: ${img.views}</p>
-          <p><b>Comments</b>: ${img.comments}</p>
-          <p><b>Downloads</b>: ${img.downloads}</p>
+          <p class="text"><b>Likes</b> ${img.likes}</p>
+          <p class="text"><b>Views</b> ${img.views}</p>
+          <p class="text"><b>Comments</b> ${img.comments}</p>
+          <p class="text"><b>Downloads</b> ${img.downloads}</p>
         </div>
       </li>
     `;
