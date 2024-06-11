@@ -129,6 +129,7 @@
         border-radius: 50%;
         box-sizing: border-box;
         animation: eat 1s linear infinite;
+        display: none;
       }
       .loader::after , .loader::before {
         content: '';
