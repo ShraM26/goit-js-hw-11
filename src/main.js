@@ -5,12 +5,8 @@ import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
  
-
-
 import {processHttpRequest} from './js/pixabay-api';
 import { imgTemplate } from './js/render-functions';
-
-
 
 const formElms = document.querySelector('.form');
 const loader = document.querySelector('.loader');
@@ -19,7 +15,6 @@ formElms.addEventListener('submit', (e) => {
     e.preventDefault();
      // Показати індикатор завантаження
     //  loader.style.display = 'block';
-
     const inputValue = formElms.elements['input'].value.trim();
     if (!inputValue) return;
     processHttpRequest(inputValue) 
@@ -46,7 +41,6 @@ formElms.addEventListener('submit', (e) => {
        // Скинути форму
       formElms.reset();
         })
- 
 });
 
 
