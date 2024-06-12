@@ -2,11 +2,11 @@
 
 
 export function imgTemplate(imgs) {
-  const galleryElm = document.querySelector('.gallery')
- galleryElm.innerHTML = '';
+  const galleryElm = document.querySelector('.gallery');
+  galleryElm.innerHTML = '';
 
-  imgs.forEach((img) => {
-    const cardMarkup = `
+  const galleryMarkup = imgs.map((img) => {
+    return `
       <li class="gallery-item">
         <a class="gallery-link" href="${img.largeImageURL}" target="_blank">
           <img class="gallery-image" 
@@ -22,6 +22,6 @@ export function imgTemplate(imgs) {
         </div>
       </li>
     `;
-    document.querySelector('.gallery').insertAdjacentHTML('beforeend', cardMarkup);
-  });
+  }).join('');
+  galleryElm.insertAdjacentHTML('beforeend', galleryMarkup);
 }
