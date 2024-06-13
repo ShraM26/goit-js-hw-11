@@ -1,21 +1,23 @@
 
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
- 
+
 import {processHttpRequest} from './js/pixabay-api';
 import { imgTemplate } from './js/render-functions';
 
 const formElms = document.querySelector('.form');
 const loader = document.querySelector('.loader');
 const galleryElm = document.querySelector('.gallery');
+const loadMoreBtn = document.querySelector('.load-more-btn');
 
 const lightbox = new SimpleLightbox('.gallery a', {
                          captionDelay: 250,
                          captionsData: 'alt',
-                    });
+});
+ 
+
 
 formElms.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -57,8 +59,6 @@ formElms.addEventListener('submit', (e) => {
       formElms.reset();
         })
 });
-
-
 
 
 
