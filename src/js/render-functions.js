@@ -2,7 +2,7 @@
 const galleryElm = document.querySelector('.gallery');
 
 export function imgTemplate(imgs) {
-  galleryElm.innerHTML = '';
+  
   const galleryMarkup = imgs.map(({largeImageURL, webformatURL, tags, likes, views, comments, downloads}) => {
     return `
       <li class="gallery-item">
