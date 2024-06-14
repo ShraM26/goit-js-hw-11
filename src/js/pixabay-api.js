@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-export async function processHttpRequest(searchQuery) {
+export async function processHttpRequest(searchQuery, page) {
 
   const response = await axios.get('https://pixabay.com/api', {
     params: {
@@ -10,7 +10,9 @@ export async function processHttpRequest(searchQuery) {
       image_type: 'photo',
       orientation: 'horizontal',
       safesearch: true,
-      per_page: 15,
+      page,
+      per_page: 15
+      
     }
   });
   return response.data;
